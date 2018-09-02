@@ -1,0 +1,278 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".EditorActivity">
+
+    <android.support.constraint.ConstraintLayout xmlns:app="http://schemas.android.com/apk/res-auto"
+        xmlns:tools="http://schemas.android.com/tools"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="@dimen/activity_margin">
+
+        <ImageView
+            android:id="@+id/product_image"
+            android:layout_width="@dimen/image_view_width"
+            android:layout_height="@dimen/image_view_height"
+            android:layout_marginLeft="@dimen/image_view_margin"
+            android:layout_marginStart="@dimen/image_view_margin"
+            android:layout_marginTop="@dimen/image_view_margin"
+            android:adjustViewBounds="true"
+            android:contentDescription="@string/product_image_description"
+            android:cropToPadding="true"
+            android:scaleType="centerCrop"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:srcCompat="@drawable/default_image" />
+
+        <EditText
+            android:id="@+id/edit_text_name"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="@dimen/edit_text_name_margin_right"
+            android:layout_marginLeft="@dimen/edit_text_name_margin_left"
+            android:layout_marginRight="@dimen/edit_text_name_margin_right"
+            android:layout_marginStart="@dimen/edit_text_name_margin_left"
+            android:layout_marginTop="@dimen/edit_text_name_margin_top"
+            android:ellipsize="end"
+            android:ems="10"
+            android:hint="@string/edit_text_product_name_hint"
+            android:inputType="text"
+            android:maxLines="2"
+            android:minLines="1"
+            android:textAppearance="@style/TextAppearance.AppCompat.Medium"
+            app:layout_constraintLeft_toRightOf="@+id/product_image"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/edit_text_price_label"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="@dimen/price_label_margin_left"
+            android:layout_marginStart="@dimen/price_label_margin_left"
+            android:layout_marginTop="@dimen/price_label_margin_top"
+            android:text="@string/price_label_text"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/product_image" />
+
+        <EditText
+            android:id="@+id/edit_text_price"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="@dimen/edit_text_price_margin_right"
+            android:layout_marginLeft="@dimen/edit_text_price_margin_left"
+            android:layout_marginRight="@dimen/edit_text_price_margin_right"
+            android:layout_marginStart="@dimen/edit_text_price_margin_left"
+            android:ems="10"
+            android:gravity="end"
+            android:hint="@string/edit_text_price_hint"
+            android:inputType="numberDecimal"
+            android:maxLines="1"
+            android:textAlignment="viewEnd"
+            android:textAppearance="@style/TextAppearance.AppCompat.Medium.Inverse"
+            app:layout_constraintBaseline_toBaselineOf="@+id/edit_text_price_label"
+            app:layout_constraintLeft_toRightOf="@+id/edit_text_price_label"
+            app:layout_constraintRight_toRightOf="parent" />
+
+        <TextView
+            android:id="@+id/edit_text_supplier_label"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/supplier_label_margin_top"
+            android:text="@string/supplier_label_title"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintLeft_toLeftOf="@+id/edit_text_price_label"
+            app:layout_constraintRight_toRightOf="@+id/edit_text_price_label"
+            app:layout_constraintTop_toBottomOf="@+id/edit_text_price_label" />
+
+        <EditText
+            android:id="@+id/edit_text_supplier"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="@dimen/edit_text_supplier_margin_right"
+            android:layout_marginLeft="@dimen/edit_text_supplier_margin_left"
+            android:layout_marginRight="@dimen/edit_text_supplier_margin_right"
+            android:layout_marginStart="@dimen/edit_text_supplier_margin_left"
+            android:ellipsize="end"
+            android:ems="10"
+            android:inputType="text"
+            android:maxLines="1"
+            android:textAppearance="@style/TextAppearance.AppCompat.Medium.Inverse"
+            app:layout_constraintBaseline_toBaselineOf="@+id/edit_text_supplier_label"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintLeft_toRightOf="@+id/edit_text_supplier_label"
+            app:layout_constraintRight_toRightOf="parent" />
+
+        <TextView
+            android:id="@+id/edit_text_supplier_phone_label"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="@dimen/phone_label_margin_right"
+            android:layout_marginLeft="@dimen/phone_label_margin_left"
+            android:layout_marginRight="@dimen/phone_label_margin_right"
+            android:layout_marginStart="@dimen/phone_label_margin_left"
+            android:layout_marginTop="@dimen/phone_label_margin_top"
+            android:text="@string/phone_label_title"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintLeft_toLeftOf="@+id/edit_text_supplier_label"
+            app:layout_constraintRight_toRightOf="@+id/edit_text_supplier_label"
+            app:layout_constraintTop_toBottomOf="@+id/edit_text_supplier_label" />
+
+        <EditText
+            android:id="@+id/edit_text_supplier_phone"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="@dimen/edit_text_phone_margin_right"
+            android:layout_marginLeft="@dimen/edit_text_phone_margin_left"
+            android:layout_marginRight="@dimen/edit_text_phone_margin_right"
+            android:layout_marginStart="@dimen/edit_text_phone_margin_left"
+            android:ems="10"
+            android:inputType="phone"
+            app:layout_constraintBaseline_toBaselineOf="@+id/edit_text_supplier_phone_label"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintLeft_toRightOf="@+id/edit_text_supplier_phone_label"
+            app:layout_constraintRight_toRightOf="parent" />
+
+        <TextView
+            android:id="@+id/edit_text_supplier_email_label"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="@dimen/email_label_margin_right"
+            android:layout_marginLeft="@dimen/email_label_margin_left"
+            android:layout_marginRight="@dimen/email_label_margin_right"
+            android:layout_marginStart="@dimen/email_label_margin_left"
+            android:layout_marginTop="@dimen/email_label_margin_top"
+            android:text="@string/email_label_title"
+            app:layout_constraintLeft_toLeftOf="@+id/edit_text_supplier_phone_label"
+            app:layout_constraintRight_toRightOf="@+id/edit_text_supplier_phone_label"
+            app:layout_constraintTop_toBottomOf="@+id/edit_text_supplier_phone_label" />
+
+        <EditText
+            android:id="@+id/edit_text_supplier_email"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="@dimen/edit_text_email_margin_right"
+            android:layout_marginLeft="@dimen/edit_text_email_margin_left"
+            android:layout_marginRight="@dimen/edit_text_email_margin_right"
+            android:layout_marginStart="@dimen/edit_text_email_margin_left"
+            android:ems="10"
+            android:inputType="textEmailAddress"
+            app:layout_constraintBaseline_toBaselineOf="@+id/edit_text_supplier_email_label"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintLeft_toRightOf="@+id/edit_text_supplier_email_label"
+            app:layout_constraintRight_toRightOf="parent" />
+
+        <TextView
+            android:id="@+id/text_view_quantity_label"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="@dimen/quantity_label_margin_right"
+            android:layout_marginLeft="@dimen/quantity_label_margin_left"
+            android:layout_marginRight="@dimen/quantity_label_margin_right"
+            android:layout_marginStart="@dimen/quantity_label_margin_left"
+            android:layout_marginTop="@dimen/quantity_label_margin_top"
+            android:text="@string/quantity_label_title"
+            app:layout_constraintHorizontal_bias="1.0"
+            app:layout_constraintLeft_toLeftOf="@+id/edit_text_supplier_email_label"
+            app:layout_constraintRight_toRightOf="@+id/edit_text_supplier_email_label"
+            app:layout_constraintTop_toBottomOf="@+id/edit_text_supplier_email_label" />
+
+        <TextView
+            android:id="@+id/text_view_quantity"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="@dimen/quantity_margin_right"
+            android:layout_marginLeft="@dimen/quantity_margin_left"
+            android:layout_marginRight="@dimen/quantity_margin_right"
+            android:layout_marginStart="@dimen/quantity_margin_left"
+            android:textAlignment="center"
+            android:textAppearance="@style/TextAppearance.AppCompat.Medium"
+            app:layout_constraintBaseline_toBaselineOf="@+id/text_view_quantity_label"
+            app:layout_constraintHorizontal_bias="1.0"
+            app:layout_constraintLeft_toLeftOf="@+id/edit_text_modifier"
+            app:layout_constraintRight_toRightOf="@+id/edit_text_modifier"
+            tools:text="8" />
+
+        <TextView
+            android:id="@+id/edit_text_modifier_label"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="@dimen/modifier_label_margin_left"
+            android:layout_marginStart="@dimen/modifier_label_margin_left"
+            android:layout_marginTop="@dimen/modifier_label_margin_top"
+            android:text="@string/modify_label_title"
+            app:layout_constraintLeft_toLeftOf="@+id/text_view_quantity_label"
+            app:layout_constraintTop_toBottomOf="@+id/text_view_quantity_label" />
+
+        <EditText
+            android:id="@+id/edit_text_modifier"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="@dimen/edit_text_modifier_margin_right"
+            android:layout_marginLeft="@dimen/edit_text_modifier_margin_left"
+            android:layout_marginRight="@dimen/edit_text_modifier_margin_right"
+            android:layout_marginStart="@dimen/edit_text_modifier_margin_left"
+            android:ems="10"
+            android:hint="@string/edit_text_modifier_hint"
+            android:inputType="number"
+            android:textAlignment="center"
+            android:textAppearance="@style/TextAppearance.AppCompat.Medium.Inverse"
+            app:layout_constraintBaseline_toBaselineOf="@+id/edit_text_modifier_label"
+            app:layout_constraintLeft_toRightOf="@+id/edit_text_modifier_label"
+            app:layout_constraintRight_toRightOf="parent" />
+
+        <LinearLayout
+            android:id="@+id/button_container"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/button_container_margin_top"
+            android:orientation="horizontal"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/edit_text_modifier">
+
+            <Button
+                android:id="@+id/button_quantity_plus"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="@string/button_title_plus"
+                android:textSize="@dimen/button_plus_text_size"
+                tools:ignore="ButtonStyle" />
+
+            <Button
+                android:id="@+id/button_quantity_minus"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="@string/button_minus_title"
+                android:textSize="@dimen/button_minus_text_size"
+                android:textStyle="bold"
+                tools:ignore="ButtonStyle" />
+
+        </LinearLayout>
+
+        <Button
+            android:id="@+id/button_order_more"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="@dimen/button_order_more_margin_bottom"
+            android:layout_marginEnd="@dimen/button_order_more_margin_right"
+            android:layout_marginLeft="@dimen/button_order_more_margin_left"
+            android:layout_marginRight="@dimen/button_order_more_margin_right"
+            android:layout_marginStart="@dimen/button_order_more_margin_left"
+            android:layout_marginTop="@dimen/button_order_more_margin_top"
+            android:layout_weight="1"
+            android:text="@string/button_order_more_title"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/button_container" />
+
+    </android.support.constraint.ConstraintLayout>
+</ScrollView>
